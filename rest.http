@@ -1,1 +1,13 @@
 POST http://localhost:3000/products.json 
+Content-Type: application/json 
+
+{
+
+"name": "Candy Corn",
+"price": 1,
+"image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Candy-Corn.jpg/1200px-Candy-Corn.jpg",
+"description": "Wax covered sweet corn candy"
+
+
+
+}
