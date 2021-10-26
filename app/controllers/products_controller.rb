@@ -14,7 +14,13 @@ class ProductsController < ApplicationController
   end
 
   def index
-    all_products = Product.all
-    render json: all_products.as_json
+    all_product = Product.all
+    render json: all_product.as_json
   end
+
+  def show
+    show_product = Product.find_by(id:1)
+    render json: show_product.as_json
+  end
+
 end

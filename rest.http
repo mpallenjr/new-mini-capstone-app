@@ -13,3 +13,6 @@ Content-Type: application/json
 
 ###INDEX - SHOW ALL PRODUCTS
 GET http://localhost:3000/products.json
+
+###SHOW - SHOW A SINGLE PRODUCT
+GET http://localhost:3000/products/1.json 
