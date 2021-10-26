@@ -12,4 +12,9 @@ class ProductsController < ApplicationController
     render json: new_product.as_json
 
   end
+
+  def index
+    all_products = Product.all
+    render json: all_products.as_json
+  end
 end

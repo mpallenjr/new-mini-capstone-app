@@ -1,3 +1,4 @@
+###CREATE NEW PRODUCT
 POST http://localhost:3000/products.json 
 Content-Type: application/json 
 
@@ -8,6 +9,7 @@ Content-Type: application/json
 "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Candy-Corn.jpg/1200px-Candy-Corn.jpg",
 "description": "Wax covered sweet corn candy"
 
-
-
 }
+
+###INDEX - SHOW ALL PRODUCTS
+GET http://localhost:3000/products.json
