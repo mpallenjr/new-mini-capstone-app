@@ -15,4 +15,19 @@ Content-Type: application/json
 GET http://localhost:3000/products.json
 
 ###SHOW - SHOW A SINGLE PRODUCT
-GET http://localhost:3000/products/1.json 
+GET http://localhost:3000/products/6.json 
+
+###UPDATE - UPDATE A SINGLE PRODUCT
+PATCH http://localhost:3000/products/4.json 
+Content-Type: application/json
+
+{
+  "name": "Pikachu",
+  "price": 1000,
+  "image_url": "https://secure.img1-fg.wfcdn.com/im/77981853/resize-h755-w755%5Ecompr-r85/8470/84707680/Pokemon+Pikachu+Wall+Decal.jpg",
+  "description": "Don't get too close before you tame him!"
+
+}
+
+###DELETE - DELETE A SINGLE PRODUCT
+DELETE http://localhost:3000/products/6.json

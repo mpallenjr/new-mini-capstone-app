@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   post "/products" => "products#create"
   get "/products"=> "products#index"
   get "products/:id" => "products#show"
+  patch "products/:id" => "products#update"
+  delete "products/:id" => "products#delete"
 end

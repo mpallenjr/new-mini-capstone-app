@@ -24,4 +24,21 @@ class ProductsController < ApplicationController
     render json: show_product.as_json
   end
 
+  def update
+    the_id = params[:id]
+    update_product = Product.find_by(id: the_id)
+    update_product.name = params[:name]
+    update_product.price = params[:price]
+    update_product.image_url = params[:image_url]
+    update_product.description = params[:description]
+    update_product.save
+    render json: update_product.as_json
+  end
+
+  def delete
+    the_id = params[:id]
+    delete_product = Product.find_by(id: the_id)
+    delete_product.destroy
+    render json: {message: "The product was successfully deleted."}
+  end
 end
