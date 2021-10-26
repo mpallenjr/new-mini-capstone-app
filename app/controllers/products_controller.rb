@@ -9,19 +9,19 @@ class ProductsController < ApplicationController
     
     )
     new_product.save
-    render json: new_product.as_json
+    render json: new_product
 
   end
 
   def index
     all_product = Product.all
-    render json: all_product.as_json
+    render json: all_product
   end
 
   def show
     the_id = params[:id]
     show_product = Product.find_by(id: the_id)
-    render json: show_product.as_json
+    render json: show_product
   end
 
   def update
@@ -32,7 +32,7 @@ class ProductsController < ApplicationController
     update_product.image_url = params[:image_url]
     update_product.description = params[:description]
     update_product.save
-    render json: update_product.as_json
+    render json: update_product
   end
 
   def delete

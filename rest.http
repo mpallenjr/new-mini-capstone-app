@@ -15,10 +15,10 @@ Content-Type: application/json
 GET http://localhost:3000/products.json
 
 ###SHOW - SHOW A SINGLE PRODUCT
-GET http://localhost:3000/products/6.json 
+GET http://localhost:3000/products/1.json 
 
 ###UPDATE - UPDATE A SINGLE PRODUCT
-PATCH http://localhost:3000/products/4.json 
+PATCH http://localhost:3000/products/7.json 
 Content-Type: application/json
 
 {
@@ -30,7 +30,7 @@ Content-Type: application/json
 }
 
 ###DELETE - DELETE A SINGLE PRODUCT
-DELETE http://localhost:3000/products/6.json
+DELETE http://localhost:3000/products/7.json
 
 
 
