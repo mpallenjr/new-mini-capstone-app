@@ -8,8 +8,13 @@ class ProductsController < ApplicationController
       description: params[:description]
     
     )
-    new_product.save
+    if new_product.save
     render json: new_product
+    else
+      render json: {errors: product.errors.full_messages}
+    end
+      
+    end
 
   end
 
@@ -42,3 +47,6 @@ class ProductsController < ApplicationController
     render json: {message: "The product was successfully deleted."}
   end
 end
+
+
+#### ADDING HAPPY AND SAD PATHS TO YOUR CONTROLLER!!!!!
