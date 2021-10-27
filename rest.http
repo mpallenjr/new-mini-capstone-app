@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUzNzg5NTl9.7M32tv-FtKFzcNhenGyT_c8YLOJOI3ZOAA8YinkGfMs
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUzODgwMDF9.Qx8bMNkKzf-th6QFPIxFAy78kgeDYOLGPqOgaM9J_p0
 
 ###CREATE NEW PRODUCT
 POST http://localhost:3000/products.json 
@@ -19,11 +19,11 @@ GET http://localhost:3000/products.json
 Authorization: Bearer {{jwt}}
 
 ###SHOW - SHOW A SINGLE PRODUCT
-GET http://localhost:3000/products/1.json 
+GET http://localhost:3000/products/11.json 
 Authorization: Bearer {{jwt}}
 
 ###UPDATE - UPDATE A SINGLE PRODUCT
-PATCH http://localhost:3000/products/7.json 
+PATCH http://localhost:3000/products/11.json 
 Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
@@ -36,7 +36,7 @@ Content-Type: application/json
 }
 
 ###DELETE - DELETE A SINGLE PRODUCT
-DELETE http://localhost:3000/products/7.json
+DELETE http://localhost:3000/products/10.json
 Authorization: Bearer {{jwt}}
 
 
@@ -64,7 +64,7 @@ Content-Type: application/json
 
 
 
-###### STILL NEED TO UPDATE SO YOU CANNOT DO STUFF UNLESS LOGGED IN, REVEIEVES ERROR. 
+###### STILL NEED TO UPDATE SO YOU CANNOT DO STUFF UNLESS LOGGED IN, REVEIEVES ERROR. 23:00 min in videp
 
 #### Still need to allow a user to add images whenthey create a product. 
 
@@ -72,18 +72,16 @@ Content-Type: application/json
 
 ### ORDERS CREATE
 POST http://localhost:3000/orders.json
+Authorization: Bearer {{jwt}}
 Content-Type: application/json 
 
 {
-"user_id": "1",
-"product_id": "2",
-"quantity": "100",
-"subtotal": "30",
-"tax": "32",
-"total": "33"
-
-
-
+  "product_id": "1",
+  "quantity": "3"
 }
+
+
+### ORDERS INDEX
+GET http://localhost:3000/orders.json
 
 

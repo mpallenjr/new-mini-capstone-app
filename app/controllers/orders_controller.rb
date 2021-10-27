@@ -1,15 +1,24 @@
 class OrdersController < ApplicationController
-  
+  def index
+    orders = Order.all 
+    render json: orders
+  end
   def create
+    product = Product.find_by(id: params[:product_id])    
+    calculated_subtotal = params[:quantity].to_i * product.price
+    tax_rate = 0.07
+    calculated_tax = calculated_subtotal * tax_rate
+    calculated_total = calculated_tax + calculated_subtotal
+    
     order = Order.new(
-      user_id: params[:user_id],
+      user_id: current_user.id,
       product_id: params[:product_id],
       quantity: params[:quantity],
-      subtotal: params[:subtotal],
-      tax: params[:tax],
-      total: params[:total]
-)
-order.save
+      subtotal: calculated_subtotal,
+      tax: calculated_tax,      
+      total: calculated_total,      
+    )
+    order.save
     render json: order.as_json
   end
 end
