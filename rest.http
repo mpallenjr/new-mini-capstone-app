@@ -72,5 +72,18 @@ Content-Type: application/json
 
 ### ORDERS CREATE
 POST http://localhost:3000/orders.json
+Content-Type: application/json 
+
+{
+"user_id": "1",
+"product_id": "2",
+"quantity": "100",
+"subtotal": "30",
+"tax": "32",
+"total": "33"
+
+
+
+}
 
 
