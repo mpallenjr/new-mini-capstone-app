@@ -1,3 +1,5 @@
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUzNzg5NTl9.7M32tv-FtKFzcNhenGyT_c8YLOJOI3ZOAA8YinkGfMs
+
 ###CREATE NEW PRODUCT
 POST http://localhost:3000/products.json 
 Content-Type: application/json 
@@ -14,16 +16,15 @@ Content-Type: application/json
 
 ###INDEX - SHOW ALL PRODUCTS
 GET http://localhost:3000/products.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUzNzg5NTl9.7M32tv-FtKFzcNhenGyT_c8YLOJOI3ZOAA8YinkGfMs
-
+Authorization: Bearer {{jwt}}
 
 ###SHOW - SHOW A SINGLE PRODUCT
 GET http://localhost:3000/products/1.json 
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUzNzg5NTl9.7M32tv-FtKFzcNhenGyT_c8YLOJOI3ZOAA8YinkGfMs
+Authorization: Bearer {{jwt}}
 
 ###UPDATE - UPDATE A SINGLE PRODUCT
 PATCH http://localhost:3000/products/7.json 
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUzNzg5NTl9.7M32tv-FtKFzcNhenGyT_c8YLOJOI3ZOAA8YinkGfMs
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
@@ -36,7 +37,7 @@ Content-Type: application/json
 
 ###DELETE - DELETE A SINGLE PRODUCT
 DELETE http://localhost:3000/products/7.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUzNzg5NTl9.7M32tv-FtKFzcNhenGyT_c8YLOJOI3ZOAA8YinkGfMs
+Authorization: Bearer {{jwt}}
 
 
 ### Users create (signup)
@@ -64,3 +65,12 @@ Content-Type: application/json
 
 
 ###### STILL NEED TO UPDATE SO YOU CANNOT DO STUFF UNLESS LOGGED IN, REVEIEVES ERROR. 
+
+#### Still need to allow a user to add images whenthey create a product. 
+
+
+
+### ORDERS CREATE
+POST http://localhost:3000/orders.json
+
+
