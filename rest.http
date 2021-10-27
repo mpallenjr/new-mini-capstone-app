@@ -7,18 +7,23 @@ Content-Type: application/json
 "name": "Candy Corn",
 "price": 1,
 "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Candy-Corn.jpg/1200px-Candy-Corn.jpg",
-"description": "Wax covered sweet corn candy"
+"description": "Wax covered sweet corn candy",
+"supplier_id": 1
 
 }
 
 ###INDEX - SHOW ALL PRODUCTS
 GET http://localhost:3000/products.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUzNzg5NTl9.7M32tv-FtKFzcNhenGyT_c8YLOJOI3ZOAA8YinkGfMs
+
 
 ###SHOW - SHOW A SINGLE PRODUCT
 GET http://localhost:3000/products/1.json 
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUzNzg5NTl9.7M32tv-FtKFzcNhenGyT_c8YLOJOI3ZOAA8YinkGfMs
 
 ###UPDATE - UPDATE A SINGLE PRODUCT
 PATCH http://localhost:3000/products/7.json 
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUzNzg5NTl9.7M32tv-FtKFzcNhenGyT_c8YLOJOI3ZOAA8YinkGfMs
 Content-Type: application/json
 
 {
@@ -31,7 +36,31 @@ Content-Type: application/json
 
 ###DELETE - DELETE A SINGLE PRODUCT
 DELETE http://localhost:3000/products/7.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUzNzg5NTl9.7M32tv-FtKFzcNhenGyT_c8YLOJOI3ZOAA8YinkGfMs
+
+
+### Users create (signup)
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "mike",
+  "email": "mike@mike.com",
+  "password": "password",
+  "password_confirmation": "password"
+}
 
 
 
+### Sessions create (login)
+POST http://localhost:3000/sessions
+Content-Type: application/json
 
+{
+  "email": "mike@mike.com",
+  "password": "password"
+}
+
+
+
+###### STILL NEED TO UPDATE SO YOU CANNOT DO STUFF UNLESS LOGGED IN, REVEIEVES ERROR. 

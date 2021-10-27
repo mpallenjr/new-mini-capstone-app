@@ -1,21 +1,21 @@
 class ProductsController < ApplicationController
   def create
-    new_product = Product.new(
-      
-      name: params[:name],
+    product = Product.new(
+      name: params[:name], 
       price: params[:price],
-      description: params[:description]
-    
+      description: params[:description],
+      supplier_id: params[:supplier_id]
     )
-    if new_product.save
-    render json: new_product
+    if product.save
+      render json: product
     else
-      render json: {errors: product.errors.full_messages}
+      render json: {errors: product.errors.full_messages}, status: :unprocessable_entity
     end
+  end
       
     
 
-  end
+  
 
   def index
     all_product = Product.all
