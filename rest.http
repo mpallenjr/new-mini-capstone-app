@@ -3,6 +3,7 @@
 ###CREATE NEW PRODUCT
 POST http://localhost:3000/products.json 
 Content-Type: application/json 
+Authorization: Bearer {{jwt}}
 
 {
 
@@ -23,7 +24,7 @@ GET http://localhost:3000/products/11.json
 Authorization: Bearer {{jwt}}
 
 ###UPDATE - UPDATE A SINGLE PRODUCT
-PATCH http://localhost:3000/products/11.json 
+PATCH http://localhost:3000/products/14.json 
 Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
@@ -36,7 +37,7 @@ Content-Type: application/json
 }
 
 ###DELETE - DELETE A SINGLE PRODUCT
-DELETE http://localhost:3000/products/10.json
+DELETE http://localhost:3000/products/14.json
 Authorization: Bearer {{jwt}}
 
 
@@ -64,12 +65,6 @@ Content-Type: application/json
 
 
 
-###### STILL NEED TO UPDATE SO YOU CANNOT DO STUFF UNLESS LOGGED IN, REVEIEVES ERROR. 23:00 min in videp
-
-#### Still need to allow a user to add images whenthey create a product. 
-
-
-
 ### ORDERS CREATE
 POST http://localhost:3000/orders.json
 Authorization: Bearer {{jwt}}
@@ -84,4 +79,5 @@ Content-Type: application/json
 ### ORDERS INDEX
 GET http://localhost:3000/orders.json
 
-
+### ORDERS SHOW
+GET http://localhost:3000/orders/2.json 
