@@ -1,0 +1,30 @@
+Necessary Steps
+
+User logs in 
+-post request with valid jwt 
+
+User can browse all items 
+-allow user to do an index request of all items if logged in 
+
+
+User can add an item to a shopping cart 
+-create a table called carted_products user_id:integer product_id:integer quantity:integer order_id:integer status:string
+User can add multiple items to a shopping cart 
+-a new row is created whenever a user selects a product to be added to their shopping cart. status is denoted at the time of addition. (create action)
+**Status** "carted" "removed" "in progress" "purchased"
+carted - added to cart
+removed - removed item from cart before creating an order 
+in progress - created order, but order status is still incomplete.
+purchased - created order, order is complete. 
+
+
+User can purchase items in shopping cart
+-create a new order(row) and pull from carted_products all product_id and quantity, with status of 'carted' 
+-use pulled data to fill columns for subtotal, tax, total. 
+**need order status** change quantity column to status column 
+*** Status*** complete/incomplete 
+
+
+User can delete items in shopping cart
+-user wants to remove item from cart - changes status from carted to uncarted
+

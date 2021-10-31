@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUzODgwMDF9.Qx8bMNkKzf-th6QFPIxFAy78kgeDYOLGPqOgaM9J_p0
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzU1NTc0MzJ9.iw1xSjlQUZe8IC_Qq20ts77Us4HyUXXm5vDDKA4s2z8
 
 ###CREATE NEW PRODUCT
 POST http://localhost:3000/products.json 
@@ -16,15 +16,15 @@ Authorization: Bearer {{jwt}}
 }
 
 ###INDEX - SHOW ALL PRODUCTS
-GET http://localhost:3000/products.json
+GET http://localhost:3000/products.json?category=Sweets
 Authorization: Bearer {{jwt}}
 
 ###SHOW - SHOW A SINGLE PRODUCT
-GET http://localhost:3000/products/11.json 
+GET http://localhost:3000/products/2.json
 Authorization: Bearer {{jwt}}
 
 ###UPDATE - UPDATE A SINGLE PRODUCT
-PATCH http://localhost:3000/products/14.json 
+PATCH http://localhost:3000/products/2.json 
 Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
@@ -81,3 +81,12 @@ GET http://localhost:3000/orders.json
 
 ### ORDERS SHOW
 GET http://localhost:3000/orders/2.json 
+
+
+
+
+
+
+
+### Add to Shopping Cart
+POST http://localhost:3000/products
